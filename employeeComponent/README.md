@@ -1,4 +1,14 @@
 # EmployeeComponent
+ng new employeeComponent
+npm i bootstrap@3 --save
+
+
+ng g c employee/list-employee --skipTests=false --flat=true
+
+ ng g c employee/create-employee --skipTests=false --flat=true
+
+
+ng g m app-routing --flat=true --module=app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
