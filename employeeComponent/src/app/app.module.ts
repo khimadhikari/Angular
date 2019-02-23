@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CreateEmployeeComponent } from './employee/create-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FieldErrorComponent } from './field-error/field-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateEmployeeComponent,
-    ListEmployeeComponent
+    ListEmployeeComponent,
+    FieldErrorComponent
   ],
   imports: [
     BrowserModule,
