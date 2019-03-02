@@ -6,6 +6,7 @@ import { CreateEmployeeComponent } from './employee/create-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FieldErrorComponent } from './field-error/field-error.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FieldErrorComponent } from './field-error/field-error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
