@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>{{title}}</h2>
+  <h2>{{title | lowercase}}</h2>
+  <h2>{{title | uppercase}}</h2>
+  <h2>{{title | titlecase}}</h2>
+  <h2>{{title | slice:3:5}}</h2>
+  <H2> {{person | json }}</H2>
+
+  <h2>{{1.234 | number: '1.1-2'}}</h2>
+  <h2>{{1.234 | number: '3.4-5'}}</h2>
+
+  <h2>{{title | reverseChar}}</h2>
+
+  <div *ngFor="let file of files">
+    <p>{{file.name}} - {{file.size | fileSize}}</p>
+  </div>
+</div>
