@@ -1,3 +1,7 @@
-<p>
-  list-employee works!
-</p>
+<input type="text" #details class="form-control" (keyup.enter)="updatePostCall(details)" />
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of data">
+    {{item.id}} - {{item.title}}
+  </li>
+</ul>

@@ -1,3 +1,83 @@
-<p>
-  create-employee works!
-</p>
+<form [formGroup]="employeeForm" class="form-horizontal" (ngSubmit)="submit()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+    <h3 class="panel-title">Create Employee</h3>
+  </div>
+    <div class="panel-body">
+    <div class="form-group">
+    <label class="col-sm-2 control-label" for="fullName">FullName</label>
+    <div class="col-sm-8">
+      <input id="fullName" formControlName="fullName" type="text" class="form-control">
+      <app-field-error [control]="employeeForm.controls['fullName']"></app-field-error>
+    </div>
+  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="email">email</label>
+      <div class="col-sm-8">
+      <input id="email" type="text" formControlName="email" class="form-control">
+      <app-field-error [control]="employeeForm.controls['email']"></app-field-error>
+    </div>
+    </div>
+
+    <div formGroupName="skills">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="skillName">Skill</label>
+        <div class="col-sm-4">
+          <input type="text" id="skillName" class="form-control" placeholder="Name" formControlName="skillName">
+        </div>
+        <div class="col-sm-4">
+          <input type="number" id="experienceInYears" class="form-control" placeholder="Experience in years" formControlName="experienceInYears">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label">Proficiency</label>
+        <div class="col-md-8">
+          <label class="radio-inline">
+            <input type="radio" value="Beginner" formControlName="proficiency" id="proficiency">Beginner
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="Intermediate" formControlName="proficiency" id="proficiency">Intermediate
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="Expert" formControlName="proficiency" id="proficiency">Expert
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="panel-footer">
+      <div class="btn-toolbar">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="button" (click)="loadData()">Load Data</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<table border="1">
+  <tr>
+    <th style="padding:10px;">FormGroup</th>
+    <th style="padding:10px;">FormControl (FullName)</th>
+    <th style="padding:10px;">FormControl (Email)</th>
+  </tr>
+  <tr>
+    <td style="padding:10px;">
+    touched: {{employeeForm.touched}}
+    <br/> dirty: {{employeeForm.dirty}}
+    <br/>  valid: {{employeeForm.valid}}
+      <br/> formValue:  {{employeeForm.value | json}}
+    </td>
+    <td>
+      touched: {{employeeForm.get('fullName').touched}}
+      <br/> dirty: {{employeeForm.get('fullName').dirty}}
+      <br/>  valid: {{employeeForm.get('fullName').valid}}
+      <br/> formValue:  {{employeeForm.get('fullName').value | json}}
+    </td>
+    <td>
+      touched: {{employeeForm.get('email').touched}}
+      <br/> dirty: {{employeeForm.get('email').dirty}}
+      <br/>  valid: {{employeeForm.get('email').valid}}
+      <br/> formValue:  {{employeeForm.get('email').value | json}}
+    </td>
+  </tr>
+</table>
